@@ -1,5 +1,4 @@
 @extends('mahasiswa.layout')
- 
 @section('content')
  
 <div class="container mt-5">

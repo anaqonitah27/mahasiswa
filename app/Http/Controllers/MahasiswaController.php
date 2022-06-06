@@ -36,7 +36,6 @@ class MahasiswaController extends Controller{
             'Alamat' => 'required',
             'TanggalLahir'=> 'required',
         ]);
-
         $mahasiswa = new Mahasiswa;
         $mahasiswa->nim = $request->get('Nim');
         $mahasiswa->nama = $request->get('Nama');
@@ -50,9 +49,7 @@ class MahasiswaController extends Controller{
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
         return redirect()->route('mahasiswa.index')
         ->with('success', 'Mahasiswa Berhasil Ditambahkan');
-
     }
-
     public function show($Nim){
         //menampilkan detail data dengan menemukan/berdasarkan Nim Mahasiswa
             $mahasiswa = Mahasiswa::with('kelas')->where('nim',$Nim)->first();
